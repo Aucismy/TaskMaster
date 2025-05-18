@@ -1,6 +1,8 @@
+import datetime
 from tkinter import *
 from tkinter import ttk
 from config_widget import configurate_grid
+from tkcalendar import DateEntry
 
 def win_widget(win:Tk|Frame):
     configurate_grid(win, 8, 3)
@@ -22,6 +24,9 @@ def win_widget(win:Tk|Frame):
 
     label_term = ttk.Label(win, text='Срок выполнения')
     label_term.grid(row=3, column=0, sticky=E)
+
+    entry_calendar = DateEntry(win, mindate=datetime.date.today(), width=25, locale='ru')
+    entry_calendar.grid(row=3, column=1, sticky=EW)
 
     label_priority = ttk.Label(win, text='Приоритет')
     label_priority.grid(row=4, column=0, sticky=E)
