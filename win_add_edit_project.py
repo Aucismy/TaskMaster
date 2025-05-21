@@ -1,5 +1,8 @@
 from tkinter import *
 from tkinter import ttk
+
+from bext import height
+
 from config_widget import configurate_grid
 
 def win_widget_pr(win:Tk|Frame):
@@ -20,9 +23,25 @@ def win_widget_pr(win:Tk|Frame):
     entry_description.grid(row=2, column=1, sticky=EW)
 
     label_term = ttk.Label(win, text='Участники проекта')
-    label_term.grid(row=3, column=0, sticky=E)
+    label_term.grid(row=3, column=0, sticky=NE)
 
+    lb_term = Listbox(win, width=31)
+    lb_term.grid(row=3, column=1, sticky=W)
 
+    frame_btn_term = Frame(win, background='black', width=50, height=100)
+    frame_btn_term.grid(row=3, column=1, sticky=NE, pady=7)
+
+    photo_add = PhotoImage(file='icons/add_icon.png')
+
+    btn_add_term = Button(frame_btn_term, image=photo_add, activebackground='green')
+    btn_add_term.image = photo_add
+    btn_add_term.pack()
+
+    photo_delete = PhotoImage(file='icons/delete_icon.png')
+
+    btn_delete_term = Button(frame_btn_term, image=photo_delete, activebackground='red')
+    btn_delete_term.image = photo_delete
+    btn_delete_term.pack()
 
     btn_save = ttk.Button(win, text='Сохранить')
     btn_save.grid(row=4, column=1, sticky=SE)
@@ -35,7 +54,7 @@ def win_add_edit_pr():
     win = Tk()
 
     win.title('TaskMain')
-    win.geometry('400x400+650+300')
+    win.geometry('400x500+650+300')
     win.resizable(width=False, height=False)
 
     win_widget_pr(win)
