@@ -1,6 +1,7 @@
 import datetime
 from tkinter import *
 from tkinter import font, StringVar
+from main_win_widget import frame_list_task
 
 from selenium.webdriver.common.devtools.v85.dom import focus
 from tkcalendar import Calendar
@@ -82,11 +83,14 @@ def cal(win):
 def task(win):
     frame_task = Frame(win, background='red')
     frame_task.pack(fill=BOTH, expand=True)
+    configurate_grid(frame_task, 1, 1)
+    frame_list_task(frame_task, 0)
 
 
 win = Tk()
 win.title('TaskMaster')
-win.geometry('700x400+650+300')
+win.geometry('700x500+650+300')
+win.minsize(width=700, height=500)
 
 d = StringVar(value=str('%02d' % (datetime.date.today().day)))
 m = StringVar(value=str('%02d' % (datetime.date.today().month)))
