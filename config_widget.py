@@ -1,9 +1,9 @@
 from tkinter import *
 from tkinter import ttk
 
-def configurate_grid(win:Tk|Frame, row_count:int, column_count:int):
-    for r in range(row_count): win.rowconfigure(index=r, weight=1)
-    for c in range(column_count): win.columnconfigure(index=c, weight=1)
+def configurate_grid(win:Tk|Frame, row_count:int, column_count:int, wei:int = 1):
+    for r in range(row_count): win.rowconfigure(index=r, weight=wei)
+    for c in range(column_count): win.columnconfigure(index=c, weight=wei)
 
 def configurate_table(win: Tk|Frame, dict_columns):
     table = ttk.Treeview(win, columns=list(dict_columns.keys()), show='headings')
