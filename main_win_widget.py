@@ -30,9 +30,9 @@ def frame_list_project(win:Tk|Frame):
 
     configurate_table(frame_project, columns_table).grid(row=1, column=0, sticky=NSEW)
 
-def frame_list_task(win:Tk|Frame):
+def frame_list_task(win:Tk|Frame, nrow: int = 1):
     frame_task = Frame(win, background='light gray')
-    frame_task.grid(row=1, column=0, sticky=NSEW, padx=5, pady=5)
+    frame_task.grid(row=nrow, column=0, sticky=NSEW, padx=5, pady=5)
 
     configurate_grid(frame_task, 2, 8)
     frame_task.rowconfigure(index = 0, weight=0)
