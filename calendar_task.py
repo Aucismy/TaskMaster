@@ -3,7 +3,6 @@ from tkinter import *
 from tkinter import font, StringVar
 from main_win_widget import frame_list_task
 
-from selenium.webdriver.common.devtools.v85.dom import focus
 from tkcalendar import Calendar
 from config_widget import configurate_grid
 
